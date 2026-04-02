@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Boutique | ELIAS PHONE</title>
+    <meta name="description" content="Explorez notre boutique avec tous nos modèles d'iPhone. Filrez par modèle, stockage et état.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-panel">
+        <div class="logo">
+            <a href="index.html" style="font-weight: 700; font-size: 1.2rem; letter-spacing: -0.05em; color: var(--text-main);">
+                ELIAS PHONE.
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Accueil</a>
+            <a href="boutique.html" class="nav-link active">Boutique</a>
+            <a href="promotions.html" class="nav-link">Promotions</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-icons text-muted">
+            <button id="search-btn" class="icon-btn" aria-label="Rechercher">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <button id="profile-btn" class="icon-btn profile-icon-container" aria-label="Profil">
+                <svg id="profile-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <div id="profile-initial" class="profile-initial" style="display: none;"></div>
+            </button>
+            <button id="cart-btn" class="icon-btn" aria-label="Panier">
+                <div class="cart-icon-wrapper" style="position: relative;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cart-badge" class="badge-count" style="display: none;">0</span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <header style="padding-top: 10rem; padding-bottom: 2rem; text-align: center;">
+        <h1 class="scroll-reveal" style="font-size: clamp(2.5rem, 5vw, 4rem);">La Boutique.</h1>
+        <p class="text-muted scroll-reveal" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Trouvez l'iPhone qui correspond exactement à vos besoins.</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- Interactive Store Filters -->
+        <form id="boutique-filters" class="glass-panel filter-bar scroll-reveal" style="transition-delay: 0.1s" aria-label="Filtres de la boutique">
+            
+            <fieldset class="filter-group">
+                <legend class="filter-label" style="float: left;">Modèles</legend>
+                <label class="filter-pill">
+                    <input type="radio" name="model" value="all" checked>
+                    <span class="filter-pill-text">Tous</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="model" value="17">
+                    <span class="filter-pill-text">17</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="model" value="16">
+                    <span class="filter-pill-text">16</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="model" value="15">
+                    <span class="filter-pill-text">15</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="model" value="14">
+                    <span class="filter-pill-text">14</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="model" value="13">
+                    <span class="filter-pill-text">13</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="model" value="12">
+                    <span class="filter-pill-text">12</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="model" value="11">
+                    <span class="filter-pill-text">11</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="filter-group">
+                <legend class="filter-label" style="float: left;">Stockage</legend>
+                <label class="filter-pill">
+                    <input type="radio" name="storage" value="all" checked>
+                    <span class="filter-pill-text">Tous</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="storage" value="64GB">
+                    <span class="filter-pill-text">64GB</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="storage" value="128GB">
+                    <span class="filter-pill-text">128GB</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="storage" value="256GB">
+                    <span class="filter-pill-text">256GB</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="storage" value="512GB">
+                    <span class="filter-pill-text">512GB</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="storage" value="1TB">
+                    <span class="filter-pill-text">1TB</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="filter-group">
+                <legend class="filter-label" style="float: left;">État</legend>
+                <label class="filter-pill">
+                    <input type="radio" name="condition" value="all" checked>
+                    <span class="filter-pill-text">Tous</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="condition" value="Neuf">
+                    <span class="filter-pill-text">Neuf</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="condition" value="Occasion — Très bon état">
+                    <span class="filter-pill-text">Occasion — Très bon état</span>
+                </label>
+                <label class="filter-pill">
+                    <input type="radio" name="condition" value="Occasion — Bon état">
+                    <span class="filter-pill-text">Occasion — Bon état</span>
+                </label>
+            </fieldset>
+        </form>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid-3 scroll-reveal" style="transition-delay: 0.2s">
+
+            <!-- iPhone 17 Pro Max -->
+            <article class="product-card glass-panel product-item" data-model="17" data-storage="1TB" data-condition="Neuf">
+                <span class="badge badge-new">Neuf</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-17-pro-max-1.jpg" alt="iPhone 17 Pro Max" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 17 Pro Max</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">1TB | Titanium</div>
+                <div class="product-price tabular-nums">15 999 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 17 Pro Max" data-price="15 999 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 17 Pro Max',
+                        storage: '1TB',
+                        color: 'Titanium',
+                        price: 15999,
+                        etat: 'Neuf',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-17-pro-max-1.jpg',
+                        battery: 100,
+                        processor: 'A18 Pro',
+                        camera: '48MP Triple'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- iPhone 16 Pro -->
+            <article class="product-card glass-panel product-item" data-model="16" data-storage="256GB" data-condition="Neuf">
+                <span class="badge badge-new">Neuf</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-1.jpg" alt="iPhone 16 Pro" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 16 Pro</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">256GB | Titane Blanc</div>
+                <div class="product-price tabular-nums">13 500 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 16 Pro" data-price="13 500 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 16 Pro',
+                        storage: '256GB',
+                        color: 'Titane Blanc',
+                        price: 13500,
+                        etat: 'Neuf',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-1.jpg',
+                        battery: 100,
+                        processor: 'A18 Pro',
+                        camera: '48MP Triple'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- iPhone 16 -->
+            <article class="product-card glass-panel product-item" data-model="16" data-storage="128GB" data-condition="Occasion — Très bon état">
+                <span class="badge badge-used">Occasion — Très bon état</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-1.jpg" alt="iPhone 16" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 16</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">128GB | Noir</div>
+                <div class="product-price tabular-nums">10 000 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 16" data-price="10 000 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 16',
+                        storage: '128GB',
+                        color: 'Noir',
+                        price: 10000,
+                        etat: 'Occasion — Très bon état',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-1.jpg',
+                        battery: 95,
+                        processor: 'A18',
+                        camera: '48MP Double'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- iPhone 15 Pro Max -->
+            <article class="product-card glass-panel product-item" data-model="15" data-storage="512GB" data-condition="Occasion — Très bon état">
+                <span class="badge badge-used">Occasion — Très bon état</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-1.jpg" alt="iPhone 15 Pro Max" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 15 Pro Max</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">512GB | Titane Naturel</div>
+                <div class="product-price tabular-nums">11 800 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 15 Pro Max" data-price="11 800 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 15 Pro Max',
+                        storage: '512GB',
+                        color: 'Titane Naturel',
+                        price: 11800,
+                        etat: 'Occasion — Très bon état',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-1.jpg',
+                        battery: 92,
+                        processor: 'A17 Pro',
+                        camera: '48MP Triple'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- iPhone 15 -->
+            <article class="product-card glass-panel product-item" data-model="15" data-storage="128GB" data-condition="Neuf">
+                <span class="badge badge-new">Neuf</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg" alt="iPhone 15" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 15</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">128GB | Bleu</div>
+                <div class="product-price tabular-nums">8 900 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 15" data-price="8 900 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 15',
+                        storage: '128GB',
+                        color: 'Bleu',
+                        price: 8900,
+                        etat: 'Neuf',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg',
+                        battery: 100,
+                        processor: 'A16 Bionic',
+                        camera: '48MP Double'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- iPhone 14 Pro -->
+            <article class="product-card glass-panel product-item" data-model="14" data-storage="256GB" data-condition="Occasion — Très bon état">
+                <span class="badge badge-used">Occasion — Très bon état</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-1.jpg" alt="iPhone 14 Pro" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 14 Pro</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">256GB | Violet Intense</div>
+                <div class="product-price tabular-nums">9 200 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 14 Pro" data-price="9 200 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 14 Pro',
+                        storage: '256GB',
+                        color: 'Violet Intense',
+                        price: 9200,
+                        etat: 'Occasion — Très bon état',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-1.jpg',
+                        battery: 89,
+                        processor: 'A16 Bionic',
+                        camera: '48MP Triple'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- iPhone 14 -->
+            <article class="product-card glass-panel product-item" data-model="14" data-storage="128GB" data-condition="Occasion — Bon état">
+                <span class="badge badge-used">Occasion — Bon état</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-1.jpg" alt="iPhone 14" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 14</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">128GB | Lumière Stellaire</div>
+                <div class="product-price tabular-nums">6 800 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 14" data-price="6 800 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 14',
+                        storage: '128GB',
+                        color: 'Lumière Stellaire',
+                        price: 6800,
+                        etat: 'Occasion — Bon état',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-1.jpg',
+                        battery: 86,
+                        processor: 'A15 Bionic',
+                        camera: '12MP Double'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- iPhone 13 Pro -->
+            <article class="product-card glass-panel product-item" data-model="13" data-storage="256GB" data-condition="Occasion — Très bon état">
+                <span class="badge badge-used">Occasion — Très bon état</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-pro-1.jpg" alt="iPhone 13 Pro" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 13 Pro</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">256GB | Vert Alpin</div>
+                <div class="product-price tabular-nums">7 500 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 13 Pro" data-price="7 500 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 13 Pro',
+                        storage: '256GB',
+                        color: 'Vert Alpin',
+                        price: 7500,
+                        etat: 'Occasion — Très bon état',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-pro-1.jpg',
+                        battery: 87,
+                        processor: 'A15 Bionic',
+                        camera: '12MP Triple'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- iPhone 13 -->
+            <article class="product-card glass-panel product-item" data-model="13" data-storage="128GB" data-condition="Neuf">
+                <span class="badge badge-new">Neuf</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-1.jpg" alt="iPhone 13" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 13</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">128GB | (PRODUCT)RED</div>
+                <div class="product-price tabular-nums">6 900 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 13" data-price="6 900 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 13',
+                        storage: '128GB',
+                        color: '(PRODUCT)RED',
+                        price: 6900,
+                        etat: 'Neuf',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-1.jpg',
+                        battery: 100,
+                        processor: 'A15 Bionic',
+                        camera: '12MP Double'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- iPhone 12 Pro -->
+            <article class="product-card glass-panel product-item" data-model="12" data-storage="128GB" data-condition="Occasion — Bon état">
+                <span class="badge badge-used">Occasion — Bon état</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-r1.jpg" alt="iPhone 12 Pro" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 12 Pro</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">128GB | Bleu Pacifique</div>
+                <div class="product-price tabular-nums">5 900 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 12 Pro" data-price="5 900 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 12 Pro',
+                        storage: '128GB',
+                        color: 'Bleu Pacifique',
+                        price: 5900,
+                        etat: 'Occasion — Bon état',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-r1.jpg',
+                        battery: 84,
+                        processor: 'A14 Bionic',
+                        camera: '12MP Triple'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- iPhone 12 -->
+            <article class="product-card glass-panel product-item" data-model="12" data-storage="64GB" data-condition="Occasion — Très bon état">
+                <span class="badge badge-used">Occasion — Très bon état</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-1.jpg" alt="iPhone 12" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 12</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">64GB | Blanc</div>
+                <div class="product-price tabular-nums">4 800 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 12" data-price="4 800 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 12',
+                        storage: '64GB',
+                        color: 'Blanc',
+                        price: 4800,
+                        etat: 'Occasion — Très bon état',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-1.jpg',
+                        battery: 88,
+                        processor: 'A14 Bionic',
+                        camera: '12MP Double'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- iPhone 11 -->
+            <article class="product-card glass-panel product-item" data-model="11" data-storage="64GB" data-condition="Occasion — Bon état">
+                <span class="badge badge-used">Occasion — Bon état</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-11-1.jpg" alt="iPhone 11" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 11</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">64GB | Noir</div>
+                <div class="product-price tabular-nums">3 500 MAD</div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 11" data-price="3 500 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem;">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 11',
+                        storage: '64GB',
+                        color: 'Noir',
+                        price: 3500,
+                        etat: 'Occasion — Bon état',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-11-1.jpg',
+                        battery: 82,
+                        processor: 'A13 Bionic',
+                        camera: '12MP Double'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+            <div style="font-weight: 700; font-size: 1.5rem; color: var(--text-main);">ELIAS PHONE.</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="boutique.html" class="nav-link">Boutique</a>
+                <a href="promotions.html" class="nav-link">Promotions</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="https://instagram.com/elias_phone_" target="_blank" rel="noopener noreferrer" class="nav-link text-muted" style="display: flex; align-items: center; gap: 0.5rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                @elias_phone_
+            </a>
+            <p style="font-size: 0.8rem; margin-top: 1rem;">&copy; 2025 Elias Phone. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Overlays -->
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay glass-panel">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Rechercher un iPhone..." autocomplete="off">
+            <button id="close-search" class="icon-btn">✕</button>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cart-backdrop" class="modal-backdrop"></div>
+    <div id="cart-drawer" class="cart-drawer glass-panel">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button id="close-cart" class="icon-btn">✕</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price" class="tabular-nums">0 MAD</span>
+            </div>
+            <button id="checkout-btn" class="btn btn-primary" style="width: 100%;">Passer la commande</button>
+        </div>
+    </div>
+    
+    <!-- Profile/Auth Modal -->
+    <div id="profile-backdrop" class="modal-backdrop"></div>
+    <div id="profile-modal" class="profile-modal glass-panel">
+        <button id="close-profile" class="icon-btn close-modal">✕</button>
+        <div class="modal-tabs">
+            <button class="tab-btn active" data-tab="login">Connexion</button>
+            <button class="tab-btn" data-tab="register">Inscription</button>
+        </div>
+        
+        <!-- Login Form -->
+        <form id="login-form" class="auth-form active">
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" required>
+            </div>
+            <div class="form-group">
+                <label for="login-pass">Mot de passe</label>
+                <input type="password" id="login-pass" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Se connecter</button>
+        </form>
+        
+        <!-- Register Form -->
+        <form id="register-form" class="auth-form" style="display: none;">
+            <div class="form-group">
+                <label for="reg-name">Nom complet</label>
+                <input type="text" id="reg-name" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-email">Email</label>
+                <input type="email" id="reg-email" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-pass">Mot de passe</label>
+                <input type="password" id="reg-pass" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Créer un compte</button>
+        </form>
+
+        <div id="logged-in-view" style="display: none; text-align: center; padding: 2rem 0;">
+            <div id="user-avatar-large" style="width: 60px; height: 60px; border-radius: 50%; background: #007aff; color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; margin: 0 auto 1rem;">M</div>
+            <h3 id="user-greeting" style="margin-bottom: 2rem;">Bonjour!</h3>
+            <button id="logout-btn" class="btn btn-outline" style="width: 100%; border-color: #ff3b30; color: #ff3b30;">Déconnexion</button>
+        </div>
+    </div>
+\n</body>
+</html>
+

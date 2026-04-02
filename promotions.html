@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotions | ELIAS PHONE</title>
+    <meta name="description" content="Profitez d'offres exceptionnelles sur nos iPhones pour un temps limité.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-panel">
+        <div class="logo">
+            <a href="index.html" style="font-weight: 700; font-size: 1.2rem; letter-spacing: -0.05em; color: var(--text-main);">
+                ELIAS PHONE.
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Accueil</a>
+            <a href="boutique.html" class="nav-link">Boutique</a>
+            <a href="promotions.html" class="nav-link active">Promotions</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-icons text-muted">
+            <button id="search-btn" class="icon-btn" aria-label="Rechercher">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <button id="profile-btn" class="icon-btn profile-icon-container" aria-label="Profil">
+                <svg id="profile-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <div id="profile-initial" class="profile-initial" style="display: none;"></div>
+            </button>
+            <button id="cart-btn" class="icon-btn" aria-label="Panier">
+                <div class="cart-icon-wrapper" style="position: relative;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cart-badge" class="badge-count" style="display: none;">0</span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <header style="padding-top: 10rem; padding-bottom: 2rem; text-align: center; position: relative;">
+        <!-- Countdown Widget -->
+        <div class="countdown-box scroll-reveal" aria-live="polite">
+            <span class="countdown-label">Temps Restant</span>
+            <span id="countdown-timer" class="countdown-timer tabular-nums">48 : 00 : 00</span>
+        </div>
+        
+        <div style="display: inline-block; padding: 0.5rem 1rem; border-radius: 999px; background: rgba(255, 59, 48, 0.2); color: #ff3b30; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 1rem;" class="scroll-reveal">OFFRES LIMITÉES</div>
+        <h1 class="scroll-reveal" style="font-size: clamp(2.5rem, 5vw, 4rem); transition-delay: 0.1s">Promotions.</h1>
+    </header>
+
+    <main class="container" style="padding-bottom: 6rem;">
+        
+        <!-- Promotions Grid -->
+        <div class="grid-3 scroll-reveal" style="transition-delay: 0.2s">
+
+            <!-- Promo iPhone 15 Pro -->
+            <article class="product-card glass-panel" style="border: 1px solid rgba(206, 179, 127, 0.3);">
+                <span class="badge badge-promo">PROMO</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-1.jpg" alt="iPhone 15 Pro" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 15 Pro</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Occasion — Très bon état</div>
+                
+                <div class="price-promo tabular-nums">
+                    <span class="price-old">11 500 MAD</span>
+                    <span class="product-price" style="margin: 0; color: #ff3b30;">10 800 MAD</span>
+                </div>
+                <div class="price-savings tabular-nums" style="margin-bottom: 1rem;">Économisez 700 MAD</div>
+                
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 15 Pro (Promo)" data-price="10 800 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; background-color: var(--accent-gold);">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 15 Pro',
+                        storage: '128GB',
+                        color: 'Titane Naturel',
+                        price: 10800,
+                        etat: 'Occasion — Très bon état',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-1.jpg',
+                        battery: 90,
+                        processor: 'A17 Pro',
+                        camera: '48MP Triple'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- Promo iPhone 14 Pro -->
+            <article class="product-card glass-panel" style="border: 1px solid rgba(206, 179, 127, 0.3);">
+                <span class="badge badge-promo">PROMO</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-1.jpg" alt="iPhone 14 Pro" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 14 Pro</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Occasion — Très bon état</div>
+                
+                <div class="price-promo tabular-nums">
+                    <span class="price-old">9 200 MAD</span>
+                    <span class="product-price" style="margin: 0; color: #ff3b30;">8 600 MAD</span>
+                </div>
+                <div class="price-savings tabular-nums" style="margin-bottom: 1rem;">Économisez 600 MAD</div>
+                
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 14 Pro (Promo)" data-price="8 600 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; background-color: var(--accent-gold);">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 14 Pro',
+                        storage: '128GB',
+                        color: 'Noir Sidéral',
+                        price: 8600,
+                        etat: 'Occasion — Très bon état',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-1.jpg',
+                        battery: 88,
+                        processor: 'A16 Bionic',
+                        camera: '48MP Triple'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- Promo iPhone 13 -->
+            <article class="product-card glass-panel" style="border: 1px solid rgba(206, 179, 127, 0.3);">
+                <span class="badge badge-promo">PROMO</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-1.jpg" alt="iPhone 13" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 13</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Neuf</div>
+                
+                <div class="price-promo tabular-nums">
+                    <span class="price-old">6 900 MAD</span>
+                    <span class="product-price" style="margin: 0; color: #ff3b30;">6 400 MAD</span>
+                </div>
+                <div class="price-savings tabular-nums" style="margin-bottom: 1rem;">Économisez 500 MAD</div>
+                
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 13 (Promo)" data-price="6 400 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; background-color: var(--accent-gold);">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 13',
+                        storage: '128GB',
+                        color: 'Bleu',
+                        price: 6400,
+                        etat: 'Neuf',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-1.jpg',
+                        battery: 100,
+                        processor: 'A15 Bionic',
+                        camera: '12MP Double'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+            <!-- Promo iPhone 11 -->
+            <article class="product-card glass-panel" style="border: 1px solid rgba(206, 179, 127, 0.3);">
+                <span class="badge badge-promo">PROMO</span>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-11-1.jpg" alt="iPhone 11" class="product-image" loading="lazy" style="width:100%;height:220px;object-fit:contain;" onerror="this.src='https://via.placeholder.com/300x400?text=iPhone'">
+                <h2 style="font-size: 1.5rem;">iPhone 11</h2>
+                <div class="text-muted tabular-nums" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Occasion — Bon état</div>
+                
+                <div class="price-promo tabular-nums">
+                    <span class="price-old">3 500 MAD</span>
+                    <span class="product-price" style="margin: 0; color: #ff3b30;">2 999 MAD</span>
+                </div>
+                <div class="price-savings tabular-nums" style="margin-bottom: 1rem;">Économisez 500 MAD</div>
+                
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 11 (Promo)" data-price="2 999 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; background-color: var(--accent-gold);">Ajouter</button>
+                    <button onclick="selectProduct({
+                        name: 'iPhone 11',
+                        storage: '64GB',
+                        color: 'Blanc',
+                        price: 2999,
+                        etat: 'Occasion — Bon état',
+                        image: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-11-1.jpg',
+                        battery: 85,
+                        processor: 'A13 Bionic',
+                        camera: '12MP Double'
+                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+            <div style="font-weight: 700; font-size: 1.5rem; color: var(--text-main);">ELIAS PHONE.</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="boutique.html" class="nav-link">Boutique</a>
+                <a href="promotions.html" class="nav-link">Promotions</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="https://instagram.com/elias_phone_" target="_blank" rel="noopener noreferrer" class="nav-link text-muted" style="display: flex; align-items: center; gap: 0.5rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                @elias_phone_
+            </a>
+            <p style="font-size: 0.8rem; margin-top: 1rem;">&copy; 2025 Elias Phone. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <!-- Overlays -->
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay glass-panel">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Rechercher un iPhone..." autocomplete="off">
+            <button id="close-search" class="icon-btn">✕</button>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cart-backdrop" class="modal-backdrop"></div>
+    <div id="cart-drawer" class="cart-drawer glass-panel">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button id="close-cart" class="icon-btn">✕</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price" class="tabular-nums">0 MAD</span>
+            </div>
+            <button id="checkout-btn" class="btn btn-primary" style="width: 100%;">Passer la commande</button>
+        </div>
+    </div>
+    
+    <!-- Profile/Auth Modal -->
+    <div id="profile-backdrop" class="modal-backdrop"></div>
+    <div id="profile-modal" class="profile-modal glass-panel">
+        <button id="close-profile" class="icon-btn close-modal">✕</button>
+        <div class="modal-tabs">
+            <button class="tab-btn active" data-tab="login">Connexion</button>
+            <button class="tab-btn" data-tab="register">Inscription</button>
+        </div>
+        
+        <!-- Login Form -->
+        <form id="login-form" class="auth-form active">
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" required>
+            </div>
+            <div class="form-group">
+                <label for="login-pass">Mot de passe</label>
+                <input type="password" id="login-pass" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Se connecter</button>
+        </form>
+        
+        <!-- Register Form -->
+        <form id="register-form" class="auth-form" style="display: none;">
+            <div class="form-group">
+                <label for="reg-name">Nom complet</label>
+                <input type="text" id="reg-name" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-email">Email</label>
+                <input type="email" id="reg-email" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-pass">Mot de passe</label>
+                <input type="password" id="reg-pass" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Créer un compte</button>
+        </form>
+
+        <div id="logged-in-view" style="display: none; text-align: center; padding: 2rem 0;">
+            <div id="user-avatar-large" style="width: 60px; height: 60px; border-radius: 50%; background: #007aff; color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; margin: 0 auto 1rem;">M</div>
+            <h3 id="user-greeting" style="margin-bottom: 2rem;">Bonjour!</h3>
+            <button id="logout-btn" class="btn btn-outline" style="width: 100%; border-color: #ff3b30; color: #ff3b30;">Déconnexion</button>
+        </div>
+    </div>
+\n</body>
+</html>
