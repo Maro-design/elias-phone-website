@@ -182,31 +182,29 @@ function initAnimations() {
 /* --- Boutique Filters --- */
 function initBoutiqueFilters() {
   const productGrid = document.getElementById('product-grid');
-  const filtersForm = document.getElementById('boutique-filters');
-  if (!productGrid || !filtersForm) return;
+  const filterPills = document.querySelector('.filter-pills');
+  if (!productGrid || !filterPills) return;
 
   const products = document.querySelectorAll('.product-item');
+  const pills = filterPills.querySelectorAll('.filter-pill');
 
-  filtersForm.addEventListener('change', (e) => {
-    const formData = new FormData(filtersForm);
-    const model = formData.get('model');
-    const storage = formData.get('storage');
-    const condition = formData.get('condition');
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      // Update active state
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
 
-    products.forEach(product => {
-      const pModel = product.getAttribute('data-model');
-      const pStorage = product.getAttribute('data-storage');
-      const pCondition = product.getAttribute('data-condition');
+      const filterValue = pill.getAttribute('data-filter');
 
-      const matchModel = model === 'all' || pModel.includes(model);
-      const matchStorage = storage === 'all' || pStorage === storage;
-      const matchCondition = condition === 'all' || pCondition === condition;
-
-      if (matchModel && matchStorage && matchCondition) {
-        product.style.display = 'flex';
-      } else {
-        product.style.display = 'none';
-      }
+      products.forEach(product => {
+        const pModel = product.getAttribute('data-model');
+        // Simple model filtering for premium UX
+        if (filterValue === 'all' || pModel === filterValue) {
+          product.style.display = 'flex';
+        } else {
+          product.style.display = 'none';
+        }
+      });
     });
   });
 }

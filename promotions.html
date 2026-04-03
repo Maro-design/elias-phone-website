@@ -78,8 +78,8 @@
                 </div>
                 <div class="price-savings tabular-nums" style="margin-bottom: 1rem;">Économisez 700 MAD</div>
                 
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 15 Pro (Promo)" data-price="10 800 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; background-color: var(--accent-gold);">Ajouter</button>
+                <div class="product-actions">
+                    <button class="btn-gold add-to-cart-btn" data-name="iPhone 15 Pro (Promo)" data-price="10 800 MAD">Ajouter</button>
                     <button onclick="selectProduct({
                         name: 'iPhone 15 Pro',
                         storage: '128GB',
@@ -90,7 +90,7 @@
                         battery: 90,
                         processor: 'A17 Pro',
                         camera: '48MP Triple'
-                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                    })" class="btn-ghost">Détails</button>
                 </div>
             </article>
 
@@ -107,8 +107,8 @@
                 </div>
                 <div class="price-savings tabular-nums" style="margin-bottom: 1rem;">Économisez 600 MAD</div>
                 
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 14 Pro (Promo)" data-price="8 600 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; background-color: var(--accent-gold);">Ajouter</button>
+                <div class="product-actions">
+                    <button class="btn-gold add-to-cart-btn" data-name="iPhone 14 Pro (Promo)" data-price="8 600 MAD">Ajouter</button>
                     <button onclick="selectProduct({
                         name: 'iPhone 14 Pro',
                         storage: '128GB',
@@ -119,7 +119,7 @@
                         battery: 88,
                         processor: 'A16 Bionic',
                         camera: '48MP Triple'
-                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                    })" class="btn-ghost">Détails</button>
                 </div>
             </article>
 
@@ -136,8 +136,8 @@
                 </div>
                 <div class="price-savings tabular-nums" style="margin-bottom: 1rem;">Économisez 500 MAD</div>
                 
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 13 (Promo)" data-price="6 400 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; background-color: var(--accent-gold);">Ajouter</button>
+                <div class="product-actions">
+                    <button class="btn-gold add-to-cart-btn" data-name="iPhone 13 (Promo)" data-price="6 400 MAD">Ajouter</button>
                     <button onclick="selectProduct({
                         name: 'iPhone 13',
                         storage: '128GB',
@@ -148,7 +148,7 @@
                         battery: 100,
                         processor: 'A15 Bionic',
                         camera: '12MP Double'
-                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                    })" class="btn-ghost">Détails</button>
                 </div>
             </article>
 
@@ -165,8 +165,8 @@
                 </div>
                 <div class="price-savings tabular-nums" style="margin-bottom: 1rem;">Économisez 500 MAD</div>
                 
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                    <button class="btn btn-blue add-to-cart-btn" data-name="iPhone 11 (Promo)" data-price="2 999 MAD" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; background-color: var(--accent-gold);">Ajouter</button>
+                <div class="product-actions">
+                    <button class="btn-gold add-to-cart-btn" data-name="iPhone 11 (Promo)" data-price="2 999 MAD">Ajouter</button>
                     <button onclick="selectProduct({
                         name: 'iPhone 11',
                         storage: '64GB',
@@ -177,7 +177,7 @@
                         battery: 85,
                         processor: 'A13 Bionic',
                         camera: '12MP Double'
-                    })" class="btn btn-outline" style="flex: 1; border-radius: 12px; font-size: 0.9rem; padding: 0.8rem; text-align: center;">Détails</button>
+                    })" class="btn-ghost">Détails</button>
                 </div>
             </article>
 
@@ -232,7 +232,7 @@
                 <span>Total:</span>
                 <span id="cart-total-price" class="tabular-nums">0 MAD</span>
             </div>
-            <button id="checkout-btn" class="btn btn-primary" style="width: 100%;">Passer la commande</button>
+            <button id="checkout-btn" class="btn-primary btn-block">Passer la commande</button>
         </div>
     </div>
     
@@ -255,7 +255,7 @@
                 <label for="login-pass">Mot de passe</label>
                 <input type="password" id="login-pass" required>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Se connecter</button>
+            <button type="submit" class="btn-primary btn-block">Se connecter</button>
         </form>
         
         <!-- Register Form -->
@@ -272,13 +272,13 @@
                 <label for="reg-pass">Mot de passe</label>
                 <input type="password" id="reg-pass" required>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Créer un compte</button>
+            <button type="submit" class="btn-primary btn-block">Créer un compte</button>
         </form>
 
         <div id="logged-in-view" style="display: none; text-align: center; padding: 2rem 0;">
             <div id="user-avatar-large" style="width: 60px; height: 60px; border-radius: 50%; background: #007aff; color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; margin: 0 auto 1rem;">M</div>
             <h3 id="user-greeting" style="margin-bottom: 2rem;">Bonjour!</h3>
-            <button id="logout-btn" class="btn btn-outline" style="width: 100%; border-color: #ff3b30; color: #ff3b30;">Déconnexion</button>
+            <button id="logout-btn" class="btn-ghost btn-block" style="border-color: #ff3b30; color: #ff3b30;">Déconnexion</button>
         </div>
     </div>
 \n</body>
