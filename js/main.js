@@ -20,6 +20,14 @@ const toggleCart = () => {
     if (cartBackdrop) cartBackdrop.classList.toggle('active');
 };
 
+const toggleMobileMenu = () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger');
+    if (mobileMenu) mobileMenu.classList.toggle('active');
+    if (hamburger) hamburger.classList.toggle('active');
+    document.body.style.overflow = (mobileMenu && mobileMenu.classList.contains('active')) ? 'hidden' : 'auto';
+};
+
 const renderCart = () => {
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalPrice = document.getElementById('cart-total-price');
@@ -349,6 +357,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- CART TOGGLES ---
     const cartBtn = document.getElementById('cart-btn');
+    if (cartBtn) cartBtn.onclick = toggleCart;
+
+    // Mobile Menu Toggle
+    const hamburgerBtn = document.getElementById('hamburger');
+    if (hamburgerBtn) hamburgerBtn.onclick = toggleMobileMenu;
+
+    // Close mobile menu on link click
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburger = document.getElementById('hamburger');
+            if (mobileMenu) mobileMenu.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+
     const closeCartBtn = document.getElementById('close-cart');
     const cartBackdrop = document.getElementById('cart-backdrop');
     
