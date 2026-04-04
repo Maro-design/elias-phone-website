@@ -1057,6 +1057,15 @@ input:invalid:not(:placeholder-shown) ~ .error-msg {
   padding: 0 24px;
   width: 100%;
 }
+.hero-content .btn-primary,
+.hero-content .btn-whatsapp,
+.hero-content a {
+  position: relative !important;
+  z-index: 10 !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 
 /* Feature Cards */
 .feature-card {
